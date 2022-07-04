@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+    <title>Work Day Scheduler</title>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <p id="currentDay" class="lead">10 pm</p>
+    </header>
+    <div class="container">
+        <div id="container-hours">
+            <span id="hours">1</span>
+            <span id="hours">2</span>
+            <span id="hours">3</span>
+            <span id="hours">4</span>
+            <span id="hours">5</span>
+            <span id="hours">6</span>
+            <span id="hours">7</span>
+            <span id="hours">8</span>
+            <span id="hours">9</span>
+            <span id="hours">10</span>
+            <span id="hours">11</span>
+            <span id="hours">12</span>
+            <span id="hours">13</span>
+            <span id="hours">14</span>
+            <span id="hours">15</span>
+            <span id="hours">16</span>
+            <span id="hours">17</span>
+            <span id="hours">18</span>
+            <span id="hours">19</span>
+            <span id="hours">20</span>
+            <span id="hours">21</span>
+            <span id="hours">22</span>
+            <span id="hours">23</span>
+            <span id="hours">24</span>
+        </div>
+        <div id="drag-drop-containment">
+
+            <div id="grabbable-item-1" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">1</input>
+            </div>
+
+            <div id="grabbable-item-2" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">2</input>
+            </div>
+
+            <div id="grabbable-item-3" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">3</input>
+            </div>
+
+            <div id="grabbable-item-4" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">4</input>
+            </div>
+
+            <div id="grabbable-item-5" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">5</input>
+            </div>
+
+            <div id="grabbable-item-6" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">6</input>
+            </div>
+
+            <div id="grabbable-item-7" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">7</input>
+            </div>
+
+            <div id="grabbable-item-8" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">8</input>
+            </div>
+
+            <div id="grabbable-item-9" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">9</input>
+            </div>
+
+            <div id="grabbable-item-10" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">10</input>
+            </div>
+
+            <div id="grabbable-item-11" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">11</input>
+            </div>
+
+            <div id="grabbable-item-12" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">12</input>
+            </div>
+
+            <div id="grabbable-item-13" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">13</input>
+            </div>
+
+            <div id="grabbable-item-14" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">14</input>
+            </div>
+
+            <div id="grabbable-item-15" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">15</input>
+            </div>
+
+            <div id="grabbable-item-16" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">16</input>
+            </div>
+
+            <div id="grabbable-item-17" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">17</input>
+            </div>
+
+            <div id="grabbable-item-18" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">18</input>
+            </div>
+
+            <div id="grabbable-item-19" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">19</input>
+            </div>
+
+            <div id="grabbable-item-20" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">20</input>
+            </div>
+
+            <div id="grabbable-item-21" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">21</input>
+            </div>
+
+            <div id="grabbable-item-22" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">22</input>
+            </div>
+
+            <div id="grabbable-item-23" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">23</input>
+            </div>
+
+            <div id="grabbable-item-24" class="grabbable-item ui-state-default">
+
+                <input type="text" class="content" placeholder="placeholder">24</input>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/js/script.js"></script>
+</body>
+
+</html>
+
+<!-- 
+ -->

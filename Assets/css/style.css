@@ -1,0 +1,42 @@
+.container {
+    display: flex
+    
+}
+
+.grabbable-item {
+    border-style: solid;
+    margin: 0 5px 5px 5px; 
+    padding: 6px; 
+    font-size: 1.25em; 
+    height: 70px; 
+}
+
+.ui-state-highlight {
+    min-height: 70px;
+    margin: 0 5px 5px 5px; 
+    padding: 6px; 
+    height: 70px; 
+    /* line-height: 1.2em;  */
+}
+
+#drag-drop-containment {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 1820px;
+}
+
+#container-hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 1820px;
+    padding: 10px;
+    flex-basis: 100px;
+}
+
+#hours {
+    border-top: thick double #32a1ce;
+    height: 100%;
+}
