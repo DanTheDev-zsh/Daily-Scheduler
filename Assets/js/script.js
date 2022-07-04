@@ -10,6 +10,9 @@ $(function () {
     });
 });
 
+
+
+
 // for (let i = 0; i < numof_Hours; i++) {
     // $(`#droppable-slot-${i + 1}`).draggable({
     //     // classes: {

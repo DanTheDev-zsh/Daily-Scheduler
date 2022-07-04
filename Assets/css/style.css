@@ -5,10 +5,11 @@
 
 .grabbable-item {
     border-style: solid;
-    margin: 0 5px 5px 5px; 
-    padding: 6px; 
+    margin: 0 5px 5px 0; 
+    padding: 6px 6px 6px 0; 
     font-size: 1.25em; 
     height: 70px; 
+    display:flex;
 }
 
 .ui-state-highlight {
@@ -19,8 +20,48 @@
     /* line-height: 1.2em;  */
 }
 
+.ui-state-default {
+    border-top: thick double #32a1ce;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.content {
+    /* margin-left: 12px; */
+    border: none;
+    overflow: auto;
+    flex: 1;
+
+}
+
+.save {
+    background-color: salmon;
+    flex-basis: 100px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border: 1px solid rgb(33, 33, 33); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(33, 33, 33);  
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(70, 70, 70);  
+}
+
+
 #drag-drop-containment {
-    padding: 10px;
+    padding: 10px 10px 10px 0;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -39,4 +80,5 @@
 #hours {
     border-top: thick double #32a1ce;
     height: 100%;
+    border-top-style: dotted;
 }
