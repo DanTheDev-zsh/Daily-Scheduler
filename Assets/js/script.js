@@ -10,37 +10,40 @@ $(function () {
 
         update: function( event, ui ) {
             update_Itemcss();
-            console.log('updated') // debug
+            // console.log('updated') // debug
         }
     });
 
 });
 
 $('.save').click(function (e) {
+    // ! there is this bug where if blocks are dragged to a certain position in array, clicking the button e.target is null. and be avaliable again after dragging it to another pos
+    console.log({ // debug
+        event: e,
+        current_target_id: e.target.id
+    })
     save_Individual(e.target.id);
 });
 
 // this actually saves all entries, ran out of time to individually save.. not sure if possible 
 function save_Individual(id) {
-    console.log({
-        outside_this: this,
-    })
+
     let trailing_Num_ID = id.match(/\d+$/)[0]; // last numbers on the id 
 
     if (!$(`#input-field-${trailing_Num_ID}`)[0].value) { // first check if input field is empty and abandon if true
         warn_empty();
         return;
     }
-    console.log("looping"); // debug
+    // console.log("looping"); // debug
     $('#drag-drop-containment > .grabbable-item > .content').each(function (index) {
         const pos = index + 1;
-        console.log("index: " + (index + 1)); // debug
+        // console.log("index: " + (index + 1)); // debug
         let index_val = $(`#input-field-${index + 1}`)[0].value;
-        console.log({ // debug
-            this: this,
-            index_val,
-            this_val: this.value
-        });
+        // console.log({ // debug
+        //     this: this,
+        //     index_val,
+        //     this_val: this.value
+        // });
         localStorage.setItem(pos, this.value);
     });
 }
