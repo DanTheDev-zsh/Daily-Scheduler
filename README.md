@@ -2,6 +2,9 @@
 ### Short Description
 This project started with minimum scafolding. It is meant to imitate google calender's hourly scheduling. 
 
+### Deployed GH-Page
+Link: https://danthedev-zsh.github.io/Daily-Scheduler/
+
 ## Screenshots
 
 ![screenshot at the top](Assets/images/scs1.png)
