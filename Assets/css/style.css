@@ -1,6 +1,20 @@
+:root {
+    --bootstrap--color-theme-ultra-light: #d6faff;
+    --bootstrap--color-theme-super-light: #93f1ff;
+    --bootstrap--color-theme-light: #17a2b8;
+    --bootstrap--color-theme-dark: #04535f;
+}
+
+.lead {
+    text-align: center;    
+}
+
 .container {
     display: flex
-    
+}
+
+.display-3 {
+    text-align: center;
 }
 
 .grabbable-item {
@@ -38,30 +52,56 @@
 }
 
 .save {
-    background-color: salmon;
+    background-color: var(--bootstrap--color-theme-light);
     flex-basis: 100px;
     content: 'save';
 }
 
+.save:hover {
+    background-color: var(--bootstrap--color-theme-super-light);
+}
+
+.save:active {
+    background-color: var(--bootstrap--color-theme-ultra-light);
+    border: none;
+}
+
 ::-webkit-scrollbar {
+    overflow: hidden;
     width: 12px;
     height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    border: 1px solid rgb(33, 33, 33); 
+    overflow: hidden;
+    border: 3px solid var(--bootstrap--color-theme-dark);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(33, 33, 33);  
+    overflow: hidden;
+    background: var(--bootstrap--color-theme-light);  
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(70, 70, 70);  
+    background: var(--bootstrap--color-theme-super-light);  
 }
 
+
+/* make all placeholder italic*/
+::-webkit-input-placeholder {
+    font-style: italic;
+ }
+ :-moz-placeholder {
+    font-style: italic;  
+ }
+ ::-moz-placeholder {
+    font-style: italic;  
+ }
+ :-ms-input-placeholder {  
+    font-style: italic; 
+ }
 
 #drag-drop-containment {
     padding: 10px 10px 10px 0;
@@ -81,7 +121,14 @@
 }
 
 #hours {
-    border-top: thick double #32a1ce;
+    border-top: thick double var(--bootstrap--color-theme-light);
     height: 100%;
     border-top-style: dotted;
+}
+
+#help-button {
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-weight: bold;
 }

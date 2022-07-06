@@ -1,70 +1,92 @@
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
-
-
+// make sortable, and update coloring when dragged and dropped(sorted)
 $(function () {
     $("#drag-drop-containment").sortable({
         placeholder: "ui-state-highlight",
         axis: 'y',
         containment: "#drag-drop-containment",
         tolerance: 'pointer',
+
+        update: function( event, ui ) {
+            update_Itemcss();
+            console.log('updated') // debug
+        }
     });
 
 });
 
 $('.save').click(function (e) {
     save_Individual(e.target.id);
-    console.log("done");
 });
 
+// this actually saves all entries, ran out of time to individually save.. not sure if possible 
 function save_Individual(id) {
     console.log({
         outside_this: this,
     })
     let trailing_Num_ID = id.match(/\d+$/)[0]; // last numbers on the id 
 
-
-    if (!$(`#input-field-${trailing_Num_ID}`)[0].value) { // first check if input field is empty
+    if (!$(`#input-field-${trailing_Num_ID}`)[0].value) { // first check if input field is empty and abandon if true
         warn_empty();
         return;
     }
-    console.log("looping");
+    console.log("looping"); // debug
     $('#drag-drop-containment > .grabbable-item > .content').each(function (index) {
         const pos = index + 1;
-        console.log("index: " + (index + 1));
+        console.log("index: " + (index + 1)); // debug
         let index_val = $(`#input-field-${index + 1}`)[0].value;
-        console.log({
+        console.log({ // debug
             this: this,
             index_val,
             this_val: this.value
         });
-        //  @NOTE: empty string, never null
-        // if(this.value) { // if value already exists
-        // localStorage.setItem(index+1, index_val)
         localStorage.setItem(pos, this.value);
-        console.log({
-            pos,
-            this_val: this.value
-        });
-        // console.log(`true save index:  ${index+1}  value: ${index_val}` );
-        // } else if(!this.value) {
-        //     let temp_deleted = localStorage.getItem(index+1)
-        //     localStorage.removeItem(index+1)
-        //     console.log(`false key ${index+1} removed, saved ${temp_deleted}`);
-        // }
     });
-
 }
 
+// animation for warning for empty input popup
+// *TO PRODUCE: click save on an empty input text field block
 let warn_empty = function () {
-    $("#dialog").dialog();
+    $("#dialog").dialog({
+        show: {
+            effect: "blind",
+            duration: 300
+        },
+        hide: {
+            effect: "blind",
+            duration: 300
+        }
+    });
 };
 
+// animation for help popup
+$(function () {
+    $("#help-dialog").dialog({
+        autoOpen: false,
+        show: {
+            effect: "blind",
+            duration: 300
+        },
+        hide: {
+            effect: "blind",
+            duration: 300
+        }
+    });
+
+    $("#help-button").on("click", function () {
+        $("#help-dialog").dialog("open");
+    });
+});
+
+
+// render on page ready 
 $(document).ready(function () {
     load_Storage()
     itemcss()
 });
 
+// page load to render everything in localstorage
 function load_Storage() {
     for (const k in localStorage) {
         if (localStorage.getItem(k)) {
@@ -73,6 +95,7 @@ function load_Storage() {
     }
 };
 
+// color code all events to show past present and future events 
 function itemcss() {
     const currHour = moment().hour();
     const hoursDay = 24;
@@ -88,15 +111,37 @@ function itemcss() {
                 "background-color", "salmon",
 
             )
-        }else {
+        } else {
             $(`#grabbable-item-${i}`).css(
                 "background-color", "lightgreen",
 
             )
         }
-
-
     }
-    console.log(currHour);
+}
 
+// does the same as itemcss, but this will work after dragging because it uses this which is strictly in the order of view page instead of id
+function update_Itemcss() {
+    const currHour = moment().hour();
+    $('#drag-drop-containment').children().each(function (index) {
+        if (index+1 < currHour) {
+            $(this).css(
+                "background-color", "lightgray",
+            )
+
+        } else if (index+1 == currHour) {
+            $(this).css(
+                "background-color", "salmon",
+            )
+        } else {
+            $(this).css(
+                "background-color", "lightgreen",
+            )
+        }
+    });
+}
+
+// TODO: implement reset_All to empty localstorage and rerender an brand new sheet
+function reset_All() { // ! not called
+    return;
 }
